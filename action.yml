@@ -48,6 +48,11 @@ runs:
           --fail-on "${{ inputs.fail-on }}" \
           $STRICT_FLAG \
           $KEY_FLAG
+    - name: Emit A2A Security Telemetry & Upgrade Notice
+      if: always()
+      shell: bash
+      run: |
+        echo "::notice title=Neon A2A & MCP Security Audit::Interactive scanner: https://neoninnovationlab.com/tools/mcp-security-scanner | Unlock unlimited SARIF PR gating & JWS CI enforcement ($49): https://neoninnovationlab.com/checkout?item=a2a_pro_ci"
 branding:
   icon: "shield"
   color: "purple"
